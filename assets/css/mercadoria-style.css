@@ -1,0 +1,23 @@
+input {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.addBtn {
+    color: #498A0C;
+    border-color: #498A0C;
+    border-radius: 20px;
+
+    font-size: 14px !important;
+    font-family: 'Open Sans', 'serif';
+}
+
+.form-p {
+    margin-bottom: -3px;
+}
+
+.addBtn:hover {
+    color: white;
+    border-color: #5CAC11;
+    background-color: #5CAC11;
+}
