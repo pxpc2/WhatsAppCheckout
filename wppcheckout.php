@@ -4,7 +4,7 @@
  * 
  * Plugin name: Carrinho WhatsApp BETA
  * Description: Versão BETA em desenvolvimento do wppcheckout desenvolvido para o Mercado Orgânico.
- * Version: 0.0.7
+ * Version: 0.0.8
  * Author: Pedro Daia
  * Author URI: https://github.com/pxpc2
  * Text Domain: options-plugin
@@ -27,22 +27,22 @@
       }
 
       public function output_post_script() {
-         // Get the post title
          $post_title = get_the_title();
          $post_price = get_post_meta(get_the_ID(), 'preco', true);
+         $post_stock =  get_post_meta(get_the_ID(), 'disponivel', true);
 
          $options_data = array(
             'isActive' => carbon_get_theme_option('contact_plugin_active'),
             'minimumPrice' => carbon_get_theme_option('valor_min_para_frete_gratis'),
         );
         
-        // Convert the minimumPrice to a number (removing any non-numeric characters)
         $options_data['minimumPrice'] = floatval(preg_replace('/[^0-9.]/', '', $options_data['minimumPrice']));
 
          echo '<script>
          var postData = {
              post_title: "' . esc_js($post_title) . '",
-             post_price: "' . esc_js($post_price) . '"
+             post_price: "' . esc_js($post_price) . '",
+             post_stock: ' . json_encode($post_stock) .'
          };
          var optionsData = {
             isActive: ' . json_encode($options_data['isActive']) . ',

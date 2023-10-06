@@ -1,6 +1,6 @@
 <div>
     <div class="form-div">
-        <p class='form-p'>Quantidade: </p>
+        <p class='form-p' id='qtd-p'>Quantidade: </p>
         <input type="number" class="form-input" id="quantityInput" min="1" value="1">
         <dialog id='modal' class='form-modal'>
             <div class='modal-div'>
@@ -45,6 +45,13 @@
         window.location = "https://mercadoorganico.coop.br/index.php/checkout/";
     }
     jQuery(document).ready(function($) {
+        let inStock = postData.post_stock['em-estoque'];
+        console.log(inStock);
+        if (inStock === 'false') {
+            document.getElementById('qtd-p').innerHTML = `Este produto não está mais em estoque.`;
+            document.getElementById('quantityInput').style.display = 'none';
+            document.getElementById('addToCart').style.display = 'none';
+        }
         $('#addToCart').on('click', function(e) {
             let postTitle = postData.post_title;
             let postPrice = postData.post_price;
