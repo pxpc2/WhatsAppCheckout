@@ -4,7 +4,7 @@
  * 
  * Plugin name: Carrinho WhatsApp BETA
  * Description: Versão BETA em desenvolvimento do wppcheckout desenvolvido para o Mercado Orgânico.
- * Version: 0.0.8
+ * Version: 0.0.9
  * Author: Pedro Daia
  * Author URI: https://github.com/pxpc2
  * Text Domain: options-plugin
@@ -14,6 +14,11 @@
    die('Você não pode acessar aqui.');
  }
 
+ /**
+  * última atualização (0.0.9):
+   * - Adicionado tabela de frete
+   * - Adicionado função de frete grátis baseado na tabela de fretes
+  */
 
  if (!class_exists('WppCheckout')) {
    class WppCheckout {

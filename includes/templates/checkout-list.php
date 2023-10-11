@@ -40,18 +40,207 @@
 <script>
     const bairros = [
         {
-            nome: 'Asa Sul',
-            frete: 10.00,
-        },
-        {
-            nome: 'Asa Norte',
-            frete: 15.00,
+            nome: 'Água Quente',
+            frete: 70.00,
+            ofertaFreteGratis: false,
         },
         {
             nome: 'Águas Claras',
+            frete: 25.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Arapoanga',
+            frete: 50.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Arniqueiras',
+            frete: 25.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Asa Norte',
             frete: 20.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Asa Sul',
+            frete: 20.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Brazlândia',
+            frete: 80.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Candangolândia',
+            frete: 20.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Ceilândia',
+            frete: 70.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Cruzeiro',
+            frete: 15.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Fercal',
+            frete: 70.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Gama',
+            frete: 70.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Guará',
+            frete: 15.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Itapoã',
+            frete: 40.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Jardim A B C',
+            frete: 40.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Jardim Botânico',
+            frete: 40.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Lago Norte',
+            frete: 25.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Lago Sul',
+            frete: 25.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Mangueiral',
+            frete: 30.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Noroeste',
+            frete: 15.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Núcleo Bandeirante',
+            frete: 20.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Octogonal',
+            frete: 15.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Paranoá',
+            frete: 30.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Park Sul',
+            frete: 15.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Park Way',
+            frete: 30.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Planaltina',
+            frete: 80.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Recanto das Emas',
+            frete: 50.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Riacho Fundo I',
+            frete: 40.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Riacho Fundo II',
+            frete: 40.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Samambaia',
+            frete: 50.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Santa Maria',
+            frete: 70.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'São Sebastião',
+            frete: 50.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Setor de Hotéis e Turismo Norte',
+            frete: 40.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Sobradinho',
+            frete: 70.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Sol Nascente',
+            frete: 80.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Sudoeste',
+            frete: 20.00,
+            ofertaFreteGratis: true,
+        },
+        {
+            nome: 'Taguatinga',
+            frete: 30.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Varjão',
+            frete: 30.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Vicente Pires',
+            frete: 20.00,
+            ofertaFreteGratis: false,
+        },
+        {
+            nome: 'Vila Planalto',
+            frete: 30.00,
+            ofertaFreteGratis: true,
         }
-    ]
+    ];
+
 
     const formasPagamento = [
         {
@@ -146,7 +335,6 @@
         // SELEÇÃO DE BAIRRO PARA CÁLCULO DO FRETE.
         bairros.forEach(bairro => {
             let op = document.createElement('option');
-            console.log(bairro.nome);
             op.value = bairro.frete;
             op.textContent = bairro.nome;
             selectEl.appendChild(op);
@@ -161,16 +349,24 @@
             frete = selectEl.value;
             bairroNome = selectEl.selectedOptions[0].textContent;
             let f =document.getElementById('valorFrete');
+            
+  
 
             if (bairroNome.localeCompare('Selecione um bairro') != 0) {
                 adressForm.style.display = 'block';
-
                 if (optionsData.isActive && total > optionsData.minimumPrice) {
-                    f.innerHTML = `Entrega grátis para compras acima de ${optionsData.minimumPrice}`;
-                    frete = 0;
-                }
-                else {
-                    f.innerHTML = `Taxa de entrega: R$${frete}`;
+                    for (let i = 0; i < bairros.length; i++) {
+                        if (bairros[i].nome.localeCompare(bairroNome) == 0) {
+                            if (bairros[i].ofertaFreteGratis) {
+                                f.innerHTML = `Entrega grátis para compras acima de R$${parseFloat(optionsData.minimumPrice).toFixed(2)}`;
+                                frete = 0;
+                            }
+                            else {
+                                f.innerHTML = `Taxa de entrega: R$${frete}`;
+                            }
+                            break;
+                        }
+                    }
                 }
                 let compl = parseFloat(total) + parseFloat(frete);
                 let t = `Total do carrinho: R$${compl.toFixed(2)}`;
